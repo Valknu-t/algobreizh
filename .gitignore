@@ -1,0 +1,7 @@
+*.log
+BuildFrontAsset/node_modules
+BuildFrontAsset/yarn.lock
+
+/.htaccess
+/readme.html
+
