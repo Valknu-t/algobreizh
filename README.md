@@ -3,7 +3,6 @@
 Algobreizh est un site internet permettant aux clients d'acheter des produits à base d'algues.
 Le site propose un système permettant aux clients d'accéder aux factures liées à leurs achats ainsi que de suivre leurs commandes.
 
----
 ## Structure du site internet
 
 Le site est construit en suivant le schéma **Atomic Design**, qui consiste à découper toutes les parties du sites et les séparer les unes des autres.
