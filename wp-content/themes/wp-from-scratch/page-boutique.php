@@ -3,6 +3,15 @@
  * Template Name: Boutique
  */
 
+session_start();
+
+$isConnected = $_SESSION['connexionClient'];
+
+if (!$isConnected) {
+    header('Location: http://local.dev.algobreizh.com/');
+    exit;
+}
+
 get_header(); ?>
 
 <section>

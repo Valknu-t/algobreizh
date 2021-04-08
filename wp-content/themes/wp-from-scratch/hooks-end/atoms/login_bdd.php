@@ -8,8 +8,8 @@ function algo_login_bdd() {
     $BDD['user'] = "root";
     $BDD['pass'] = "";
     $BDD ['db'] = "algobreizh";
-    $mysqli = mysqli_connect($BDD['host'], $BDD['user'], $BDD['pass'], $BDD['db']);
-    return $mysqli;
+    $bdd = mysqli_connect($BDD['host'], $BDD['user'], $BDD['pass'], $BDD['db']);
+    return $bdd;
 }
 ?>
 <?php
