@@ -28,8 +28,8 @@ function algo_verif_inscription() {
         $password = randomPassword();
         $password_hash = md5($key.$password);
 
-        $query_code = mysqli_query ($connexionBDD, "SELECT * FROM ag_membres WHERE codeClient='".$_GET['codeClient']."'");
-        $query_email = mysqli_query ($connexionBDD, "SELECT * FROM ag_membres WHERE email = '".$_GET['email']."'");
+        $query_code = mysqli_query ($connexionBDD, "SELECT * FROM _membres WHERE codeClient='".$_GET['codeClient']."'");
+        $query_email = mysqli_query ($connexionBDD, "SELECT * FROM _membres WHERE email = '".$_GET['email']."'");
 
         $query_row_code = mysqli_num_rows ($query_code);
         $query_row_item = mysqli_num_rows ($query_email);
@@ -42,10 +42,10 @@ function algo_verif_inscription() {
             echo "Ce code client est déjà utilisé.";
 
         } else {
-            if (!mysqli_query ($connexionBDD,"INSERT INTO ag_membres SET codeClient='".$_GET['codeClient']."',email='".$_GET['email']."',pasword='{$password_hash}'")){
-                mysqli_query($connexionBDD,"INSERT INTO ag_membres SET PASSWORD FOR codeClient='".$_GET['codeClient']."'");
+            if (!mysqli_query ($connexionBDD,"INSERT INTO _membres SET codeClient='".$_GET['codeClient']."',email='".$_GET['email']."',pasword='{$password_hash}'")){
+                mysqli_query($connexionBDD,"INSERT INTO _membres SET PASSWORD FOR codeClient='".$_GET['codeClient']."'");
             } else {
-                algo_send_mail($password, $_GET['email']);
+                algo_send_mail($password, $_GET['email'], $_GET['codeClient']);
                 header ('Location: http://local.dev.algobreizh.com/finalisation/');
                 exit();
             }

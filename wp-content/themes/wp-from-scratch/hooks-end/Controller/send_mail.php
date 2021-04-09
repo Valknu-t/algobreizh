@@ -1,7 +1,7 @@
 <?php
 if ( !defined('ABSPATH')) exit;
 
-function algo_send_mail($mdp, $email) {
+function algo_send_mail($mdp, $email, $codeClient) {
 
     $curl = curl_init();
 
@@ -29,6 +29,7 @@ function algo_send_mail($mdp, $email) {
              ],
              "dynamic_template_data":{
                 "mdp": "'.$mdp.'"
+                "code": "'.$codeClient.'"
               }
           }
        ],
