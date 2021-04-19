@@ -19,7 +19,6 @@ function algo_verif_inscription() {
     if (isset($_GET['codeClient'], $_GET['email'])) {
         $codeClient = null;
         $email = null;
-        $tableauError = null;
 
         $connexionBDD = algo_login_bdd();
 
