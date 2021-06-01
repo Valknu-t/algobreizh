@@ -20,14 +20,14 @@ get_header(); ?>
 
 
 
-        <!-- <div>
+        <div>
             <br>
             Afficher la liste des clients : <a target="_blank" class="text-white hover:text-lightgreen" href="http://local.dev.algobreizh.com/affichage-client/" > Liste </a>
         </div>
 
         <?php //algo_inscription_admin() ?>
-        <?php //change_codeClient() ?>
-        <?php //change_email() ?> -->
+        <?php change_codeClient() ?>
+        <?php //change_email() ?>
 
     </div>
 

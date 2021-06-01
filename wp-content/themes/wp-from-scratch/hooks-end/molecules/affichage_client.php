@@ -8,7 +8,7 @@ function affichage_client(){
     $connexion_bdd -> set_charset("utf8");
     $codeClient = "jt";
 
-    $requete = "SELECT codeClient, email, grade FROM _membres";
+    $requete = "SELECT codeClient, email, prospecteur FROM _membres";
     $resultat = $connexion_bdd -> query($requete);
     $supprimer = "DELETE FROM _membres WHERE `codeClient` = {$codeClient}";
 
@@ -27,8 +27,7 @@ function affichage_client(){
     while ($ligne = $resultat -> fetch_assoc()) {
 
         settype($ligne['grade'], "int");
-        var_dump($ligne['grade']);
-        echo $ligne['codeClient'] . ' ' . $ligne['email'] . ' '. estClient($ligne['grade']) .' <a href="'. $supprimer .'"> Supprimer</a>' . '<br>';
+        echo $ligne['codeClient'] . ' ' . $ligne['email'] . ' '. estClient($ligne['grade']) .' <a class="font-semibold text-red-900 hover:text-red-700 hover:underline" href="'. $supprimer .'"> Supprimer</a>' . '<br>';
 
     }
 
