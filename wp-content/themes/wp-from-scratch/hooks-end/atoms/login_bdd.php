@@ -12,4 +12,3 @@ function algo_login_bdd() {
     return $bdd;
 }
 ?>
-<?php

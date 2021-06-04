@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Boutique
+ * Template Name: Historique
  */
 
 session_start();
@@ -16,7 +16,7 @@ get_header(); ?>
 
 <section>
     <?php algo_navbar_desktop();?>
-    <?php algo_boutique_desktop(); ?>
+    <?php algo_historique(); ?>
 </section>
 
 <?php

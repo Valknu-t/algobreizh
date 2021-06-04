@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Boutique
+ * Template Name: Commande
  */
 
 session_start();
@@ -16,7 +16,7 @@ get_header(); ?>
 
 <section>
     <?php algo_navbar_desktop();?>
-    <?php algo_boutique_desktop(); ?>
+    <?php add_commande(); ?>
 </section>
 
 <?php

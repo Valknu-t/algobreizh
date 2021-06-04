@@ -11,7 +11,7 @@ function algo_boutique_desktop(){
 ?>
 <body>
 
-    <form action="../Models/Commande.php" method="GET">
+    <form action="http://local.dev.algobreizh.com/commande/" method="POST">
 
         <?php
 
@@ -19,11 +19,11 @@ function algo_boutique_desktop(){
             while ($ligne = $resultat -> fetch_assoc()) {
                 ?>
 
-            <div class="pt-20 flex justify-center ml7">
+            <div class="pt-20 flex justify-center ml6">
 
-                <div class="flex rounded-lg bg-lightgreen flex-col py-4 px-2 opa-30 ">
+                <div class="flex rounded-lg bg-lightgreen flex-col pb-1 px-2 opa-30 ">
 
-                    <div class="font-semibold text-center">
+                    <div class="font-semibold text-center text-lg">
 
                         <?php
                             echo $ligne['product_name'];
@@ -39,9 +39,10 @@ function algo_boutique_desktop(){
 
                     </div>
 
-                    <div class="w-7 ">
+                    <div class="my-2 w-7 justify-center flex">
 
-                        <input type="number" id="id_<?php echo $ligne['product_name'];?>_quantity" name="<?php echo $ligne['product_name'];?>_quantity" min="0" >
+                        <input type="hidden" name="produitAchete[<?php echo $ligne['product_name'];?>]" value="<?php echo $ligne['product_name'];?>">
+                        <input type="number" id="quantity[<?php echo $ligne['product_name'];?>]" name="quantity[<?php echo $ligne['product_name'];?>]" min="0" class="text-center w-3/6" placeholder="0" required >
 
                     </div>
 
@@ -55,16 +56,6 @@ function algo_boutique_desktop(){
             }
 
         ?>
-
-
-        <div  class="pt-20 flex justify-center ml7">
-
-
-
-        </div>
-        <div class="pt-20 flex justify-center ml7">
-
-        </div>
 
         <div class="flex justify-center mt-20">
 

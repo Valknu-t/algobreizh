@@ -15,19 +15,12 @@ get_header(); ?>
             Pour générer un nouveau code client appuyer sur ce bouton : <?php generator_code_client(); ?>
         </div>
 
-        <?php models_ajouts_images(); ?>
         <?php models_ajouts_produits(); ?>
-
-
 
         <div>
             <br>
             Afficher la liste des clients : <a target="_blank" class="text-white hover:text-lightgreen" href="http://local.dev.algobreizh.com/affichage-client/" > Liste </a>
         </div>
-
-        <?php //algo_inscription_admin() ?>
-        <?php change_codeClient() ?>
-        <?php //change_email() ?>
 
     </div>
 
