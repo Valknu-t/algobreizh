@@ -51,7 +51,6 @@ function algo_body_contact_desktop(){
                                 <input class="font-light w-full text-white" type="text" id="email" name="email" placeholder="exemple@mail.com" required>
                             </div>
                             <div class="bg-lightgreen w-email h-px mt-1 mb-2"></div>
-                            
                         </div>
 
                         <div class="flex flex-col mb-8">

@@ -29,16 +29,8 @@ function algo_historique_admin(){
         $date = $commande['commande_date'];
 
 
-        if ($etat_commande == 2) {
-            $etat = "Commande valider";
-        }
-        elseif ($etat_commande == 1){
-            $etat = "Commande annulé";
-        }
-        else {
+        if ($etat_commande == 0) {
             $etat = "Commande en attente";
-        }
-
 
         $requete_contenu = mysqli_query($connexion_bdd, "SELECT * FROM _commandeligne WHERE commande_id = '".$commande_id."' ");
 
@@ -72,36 +64,26 @@ function algo_historique_admin(){
 <!-- ________________________________________________________________________________________________________________________________________________ -->
     <div>
 
-        <form action="#" method="POST">
+        <form action="http://local.dev.algobreizh.com/etat-commande/" method="POST">
 
-            <div>
+            <div class="flex flex-row justify-center mt-4">
+                <div class="mx-2">
 
-                <input type="submit" id="accepter"  value="accepter" name="Accepter">
+                    <input class="py-1 px-2 cursor-pointer" type="submit" id="accepter[<?php echo $commande_id ; ?>]" value="accepter" name="accepter[<?php echo $commande_id ; ?>]">
 
-            </div>
+                </div>
 
-            <div>
+                <div class="mx-2">
 
-                <input type="submit" id="refuser" value="refuser" name="Refuser">
+                    <input class="py-1 px-2 cursor-pointer" type="submit" id="refuser[<?php echo $commande_id ; ?>]" value="refuser" name="Refuser">
 
+                </div>
             </div>
 
         </form>
 
     </div>
 
-    <?php
-
-        if (isset($_POST['accepter'])) {
-
-            // var_dump($commande_id);
-
-                mysqli_query($connexion_bdd," UPDATE _commande SET etat = 2 WHERE commande_id = '".$commande_id."'");
-
-
-        }
-
-    ?>
 <!-- ________________________________________________________________________________________________________________________________________________ -->
 
     <div class="mb-2 ml-16 flex justify-center">
@@ -112,12 +94,12 @@ function algo_historique_admin(){
 
     <?php
 
-    while ( $produit = $requete_contenu ->fetch_assoc() ) {
+        while ( $produit = $requete_contenu ->fetch_assoc() ) {
 
-        // var_dump($produit['product_id']);
-        // var_dump($produit['quantite']);
-        $nom = $produit['product_id'] ;
-        $quantite = $produit['quantite'] ;
+            // var_dump($produit['product_id']);
+            // var_dump($produit['quantite']);
+            $nom = $produit['product_id'] ;
+            $quantite = $produit['quantite'] ;
 
     ?>
 
@@ -127,7 +109,12 @@ function algo_historique_admin(){
 
     </div>
 
+
     <?php
+
         }
+
     }
+    }
+
 }
